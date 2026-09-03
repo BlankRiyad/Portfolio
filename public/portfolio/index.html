@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MD. RIYAD HASAN — Political Studies Graduate & Public Administration Enthusiast. Portfolio showcasing experience, education, skills, projects and certifications." />
+  <meta name="author" content="MD. RIYAD HASAN" />
+  <meta name="keywords" content="MD. RIYAD Hasan, Political Studies, SUST, Public Administration, Portfolio, Bangladesh, Sylhet" />
+  <meta name="theme-color" content="#FDF8F3" />
+  <title>MD. RIYAD HASAN — Portfolio</title>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="MD. RIYAD HASAN — Political Studies Graduate & Public Administration Enthusiast" />
+  <meta property="og:description" content="SUST graduate with leadership experience, public administration exposure, and digital skills. Explore my experience, education, projects and certifications." />
+  <meta property="og:image" content="assets/og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MD. RIYAD HASAN — Political Studies Graduate portfolio preview" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="MD. RIYAD HASAN Portfolio" />
+  <meta property="profile:first_name" content="MD. RIYAD" />
+  <meta property="profile:last_name" content="HASAN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MD. RIYAD HASAN — Portfolio" />
+  <meta name="twitter:description" content="Political Studies Graduate | Public Administration Enthusiast. SUST graduate with leadership, research, and digital skills." />
+  <meta name="twitter:image" content="assets/og-preview.png" />
+
+  <!-- JSON-LD Structured Data (Person schema) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "MD. RIYAD HASAN",
+    "jobTitle": "Political Studies Graduate",
+    "description": "Political Studies Graduate and Public Administration Enthusiast with leadership experience, public administration exposure, and digital productivity skills.",
+    "email": "mailto:mdriyad83@student.sust.edu",
+    "telephone": "+8801602677417",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nandail",
+      "addressRegion": "Mymensingh",
+      "addressCountry": "Bangladesh"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Shahjalal University of Science and Technology (SUST)",
+      "address": "Sylhet, Bangladesh"
+    },
+    "knowsAbout": ["Political Studies", "Public Administration", "Leadership", "Python", "Web Development", "SPSS", "Academic Research", "Policy Analysis"],
+    "knowsLanguage": ["Bangla", "English"]
+  }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans + Fraunces (display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Prevent theme flash: apply saved tint before paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("rh-tint");
+        if (t === "parchment") document.documentElement.setAttribute("data-tint", "parchment");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#hero" class="skip-link">Skip to content</a>
+
+  <!-- ===================== PAGE PRELOADER ===================== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-mark">
+      <span class="pl-ring"></span>
+      <span class="pl-monogram">RH</span>
+    </div>
+  </div>
+
+  <!-- ===================== READING PROGRESS BAR ===================== -->
+  <div class="progress-bar" id="progressBar" aria-hidden="true"><span id="progressFill"></span></div>
+
+  <!-- ===================== FLOATING DOT NAV (desktop) ===================== -->
+  <nav class="dot-nav" id="dotNav" aria-label="On-page section navigation"></nav>
+
+  <!-- ===================== TOAST ===================== -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header id="navbar" class="navbar" role="banner">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand" aria-label="MD. RIYAD HASAN — home">
+        <img src="assets/logo.png" alt="MD. RIYAD HASAN — home" class="brand-logo" width="40" height="40" />
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+        <a href="cv.html" class="btn btn-primary btn-sm nav-cta">View CV</a>
+      </nav>
+
+      <div class="nav-tools">
+        <span class="nav-breadcrumb" id="navBreadcrumb" aria-live="polite">
+          <i data-lucide="map-pin"></i>
+          <span class="nav-breadcrumb-label" id="navBreadcrumbLabel">Home</span>
+        </span>
+        <button class="cmd-trigger-hint" id="cmdTriggerHint" aria-label="Open command palette" title="Command palette (Ctrl/⌘ + K)">
+          <i data-lucide="search" style="width:14px;height:14px;"></i>
+          <kbd>⌘</kbd><kbd>K</kbd>
+        </button>
+        <button class="sound-toggle" id="soundToggle" aria-label="Toggle sound effects" aria-pressed="false" title="Toggle sound effects">
+          <i data-lucide="volume-x"></i>
+        </button>
+        <button class="tint-toggle" id="tintToggle" aria-label="Switch background tint" title="Switch background tint">
+          <i data-lucide="palette"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero-mesh" aria-hidden="true"></div>
+      <div class="hero-decor" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-avatar reveal">
+          <img src="assets/logo.png" alt="Riyad Hasan emblem" class="avatar-img" width="120" height="120" />
+          <span class="avatar-ring" aria-hidden="true"></span>
+        </div>
+        <p class="hero-eyebrow reveal">Hello, I'm</p>
+        <h1 id="hero-title" class="hero-name reveal" data-kinetic>MD. RIYAD HASAN</h1>
+        <p class="hero-title-text reveal">Political Studies Graduate <span class="sep">|</span> Public Administration Enthusiast</p>
+        <p class="hero-tagline reveal">
+          Recent SUST graduate with leadership experience in student organizations, practical exposure to public administration, and a foundation in digital productivity tools — committed to teamwork, continuous learning and professional integrity.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="cv.html" class="btn btn-ghost">View / Download CV</a>
+        </div>
+        <div class="hero-meta reveal">
+          <span><i data-lucide="mail"></i> mdriyad83@student.sust.edu</span>
+          <span><i data-lucide="phone"></i> +880 1602 677417</span>
+          <span><i data-lucide="map-pin"></i> Nandail, Mymensingh</span>
+          <span class="hero-meta-reading" data-hero-reading-time><i data-lucide="book-open"></i> <span class="reading-time-value">~3 min read</span></span>
+        </div>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to about section">
+        <span class="mouse"><span class="wheel"></span></span>
+      </a>
+    </section>
+
+    <!-- ===================== STATS BAND ===================== -->
+    <section class="stats-band" aria-label="At a glance">
+      <div class="container stats-inner">
+        <div class="stat reveal">
+          <span class="stat-num" data-count="1200" data-suffix="+">0</span>
+          <span class="stat-label">Conference Attendees</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="5" data-suffix="+">0</span>
+          <span class="stat-label">Years of Study</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-label">Internships</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="4">0</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-label">Languages</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section" aria-labelledby="about-title" data-num="01">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">About Me</p>
+          <h2 id="about-title">Professional Summary</h2>
+          <span class="rule" aria-hidden="true"></span>
+        </header>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="lead">
+              Recent graduate in Political Studies from Shahjalal University of Science and Technology (SUST) with leadership experience in student organizations, practical exposure to public administration, and experience in social media marketing and organizational management.
+            </p>
+            <p>
+              Possesses strong research, communication, and problem-solving skills, complemented by proficiency in Microsoft Office, programming fundamentals, and digital productivity tools. Demonstrates a commitment to continuous learning, teamwork, and contributing effectively to organizational objectives with professionalism and integrity.
+            </p>
+          </div>
+          <aside class="about-cards reveal" aria-label="Quick facts">
+            <div class="fact-card">
+              <i data-lucide="graduation-cap"></i>
+              <div>
+                <strong>SUST Graduate</strong>
+                <span>Political Studies</span>
+              </div>
+            </div>
+            <div class="fact-card">
+              <i data-lucide="users"></i>
+              <div>
+                <strong>Leadership</strong>
+                <span>President, IKSS</span>
+              </div>
+            </div>
+            <div class="fact-card">
+              <i data-lucide="landmark"></i>
+              <div>
+                <strong>Public Admin</strong>
+                <span>Internship exposure</span>
+              </div>
+            </div>
+            <div class="fact-card">
+              <i data-lucide="code-2"></i>
+              <div>
+                <strong>Tech-Savvy</strong>
+                <span>Python, Web, AI tools</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="section section-alt" aria-labelledby="exp-title" data-num="02">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Career</p>
+          <h2 id="exp-title">Experience</h2>
+          <span class="rule" aria-hidden="true"></span>
+        </header>
+
+        <ol class="timeline" role="list">
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"><i data-lucide="award"></i></div>
+            <div class="timeline-card">
+              <p class="timeline-date">2024 — 2026</p>
+              <h3>President</h3>
+              <p class="timeline-org">Islamic Knowledge Seekers of SUST (IKSS)</p>
+              <p>Founded and led the university's largest cultural organization by establishing its constitution and governance framework, directing numerous programs, and organizing the inaugural Islamic Conference with over 1,200 attendees.</p>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"><i data-lucide="briefcase"></i></div>
+            <div class="timeline-card">
+              <p class="timeline-date">2025 — 2025</p>
+              <h3>Manager</h3>
+              <p class="timeline-org">Sughran, Sylhet</p>
+              <p>Managed day-to-day operations and coordinated team activities to ensure smooth organizational functioning and customer satisfaction.</p>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"><i data-lucide="megaphone"></i></div>
+            <div class="timeline-card">
+              <p class="timeline-date">2025 — 2025</p>
+              <h3>Social Media Marketing Intern</h3>
+              <p class="timeline-org">VERASOFTLAB, Sylhet</p>
+              <p>Supported digital marketing campaigns, created content, and assisted with social media strategy to grow brand presence and engagement.</p>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"><i data-lucide="landmark"></i></div>
+            <div class="timeline-card">
+              <p class="timeline-date">2025 — 2025</p>
+              <h3>Public Administration Intern</h3>
+              <p class="timeline-org">District Commissioner's Office, City Corporation &amp; Zilla Parishad, Sylhet District</p>
+              <p>Gained practical exposure to public administration processes by observing and assisting with operations across multiple district-level government offices.</p>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"><i data-lucide="heart"></i></div>
+            <div class="timeline-card">
+              <p class="timeline-date">2022 — 2023</p>
+              <h3>Team Co-Lead</h3>
+              <p class="timeline-org">SUST SAVE, Sylhet</p>
+              <p>Co-led a volunteer team, coordinating initiatives and supporting community-focused activities on campus.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section id="education" class="section" aria-labelledby="edu-title" data-num="03">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Academic Journey</p>
+          <h2 id="edu-title">Education</h2>
+          <span class="rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="edu-grid">
+          <article class="edu-card reveal">
+            <div class="edu-badge"><i data-lucide="graduation-cap"></i></div>
+            <p class="edu-year">2025 — 2026</p>
+            <h3>Master of Social Science (MSS)</h3>
+            <p class="edu-field">Political Studies</p>
+            <p class="edu-inst">Shahjalal University of Science and Technology (SUST), Sylhet</p>
+          </article>
+
+          <article class="edu-card reveal">
+            <div class="edu-badge"><i data-lucide="graduation-cap"></i></div>
+            <p class="edu-year">2019 — 2025</p>
+            <h3>Bachelor of Social Science (BSS)</h3>
+            <p class="edu-field">Political Studies</p>
+            <p class="edu-inst">Shahjalal University of Science and Technology (SUST), Sylhet</p>
+            <p class="edu-gpa"><i data-lucide="star"></i> CGPA: 3.33</p>
+          </article>
+
+          <article class="edu-card reveal">
+            <div class="edu-badge"><i data-lucide="book-open"></i></div>
+            <p class="edu-year">2016 — 2019</p>
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <p class="edu-field">Science</p>
+            <p class="edu-inst">Gurudayal Govt. College, Kishoreganj</p>
+            <p class="edu-gpa"><i data-lucide="star"></i> GPA: 4.08</p>
+          </article>
+
+          <article class="edu-card reveal">
+            <div class="edu-badge"><i data-lucide="book-open"></i></div>
+            <p class="edu-year">— 2016</p>
+            <h3>Secondary School Certificate (SSC)</h3>
+            <p class="edu-field">Science</p>
+            <p class="edu-inst">Nandail Road High School, Nandail</p>
+            <p class="edu-gpa"><i data-lucide="star"></i> GPA: 5.0</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="section section-alt" aria-labelledby="skills-title" data-num="04">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Capabilities</p>
+          <h2 id="skills-title">Skills</h2>
+          <span class="rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="skills-grid">
+          <!-- Technical -->
+          <div class="skill-block reveal">
+            <div class="skill-head">
+              <i data-lucide="code-2"></i>
+              <h3>Technical Skills</h3>
+            </div>
+            <div class="skill-sub">
+              <span class="skill-label">Coding</span>
+              <div class="pills">
+                <span class="pill">C</span>
+                <span class="pill">Java</span>
+                <span class="pill">Python</span>
+                <span class="pill">LaTeX</span>
+              </div>
+            </div>
+            <div class="skill-sub">
+              <span class="skill-label">Databases</span>
+              <div class="pills">
+                <span class="pill">MySQL</span>
+                <span class="pill">Access</span>
+              </div>
+            </div>
+            <div class="skill-sub">
+              <span class="skill-label">Web Dev</span>
+              <div class="pills">
+                <span class="pill">HTML</span>
+                <span class="pill">CSS</span>
+                <span class="pill">JavaScript</span>
+              </div>
+            </div>
+            <div class="skill-sub">
+              <span class="skill-label">Office Productivity</span>
+              <div class="pills">
+                <span class="pill">Word</span>
+                <span class="pill">Excel</span>
+                <span class="pill">PowerPoint</span>
+                <span class="pill">Git</span>
+                <span class="pill">Photoshop</span>
+                <span class="pill">Canva</span>
+              </div>
+            </div>
+            <div class="skill-sub">
+              <span class="skill-label">AI</span>
+              <div class="pills">
+                <span class="pill">AI-powered productivity &amp; educational tools</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div class="skill-block reveal">
+            <div class="skill-head">
+              <i data-lucide="languages"></i>
+              <h3>Languages</h3>
+            </div>
+            <div class="lang-item">
+              <div class="lang-row">
+                <span class="lang-name">Bangla</span>
+                <span class="lang-level">Native Proficiency</span>
+              </div>
+              <div class="bar"><span style="width:100%"></span></div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-row">
+                <span class="lang-name">English</span>
+                <span class="lang-level">Professional Working Proficiency</span>
+              </div>
+              <div class="bar"><span style="width:78%"></span></div>
+              <p class="lang-note">Reading · Writing · Listening · Speaking</p>
+            </div>
+          </div>
+
+          <!-- Research & Writing -->
+          <div class="skill-block reveal">
+            <div class="skill-head">
+              <i data-lucide="pen-tool"></i>
+              <h3>Research &amp; Writing</h3>
+            </div>
+            <div class="skill-sub">
+              <span class="skill-label">Research</span>
+              <div class="pills">
+                <span class="pill">SPSS</span>
+                <span class="pill">Academic Research</span>
+                <span class="pill">Policy Analysis</span>
+              </div>
+            </div>
+            <div class="skill-sub">
+              <span class="skill-label">Writing</span>
+              <div class="pills">
+                <span class="pill">Content Writing</span>
+                <span class="pill">Editing &amp; Proofreading</span>
+                <span class="pill">Creative Writing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section" aria-labelledby="proj-title" data-num="05">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Selected Work</p>
+          <h2 id="proj-title">Projects</h2>
+          <span class="rule" aria-hidden="true"></span>
+        </header>
+
+        <!-- Project filter chips (populated by main.js based on available tags) -->
+        <div class="filter-bar reveal" id="projectFilters" role="group" aria-label="Filter projects by tag"></div>
+
+        <p class="filter-status" id="filterStatus" aria-live="polite"></p>
+
+        <div class="projects-grid has-featured" id="projectsGrid">
+          <!--
+            ============================================================
+            HOW TO ADD A NEW PROJECT CARD
+            ============================================================
+            Copy the <article class="project-card ..."> block below and
+            paste it inside <div class="projects-grid">.
+
+            Update these fields:
+              - <h3>  : Project title
+              - <p class="project-desc"> : Short description
+              - <span class="tag"> : Technology / tag (repeat as needed)
+              - the two <a> links: set href to your live URL / GitHub
+                (leave as "#" if not available yet)
+
+            To use a project image, add an <img> inside the
+            <div class="project-thumb"> wrapper, or replace the
+            emoji/icon markup.
+            ============================================================
+          -->
+          <article class="project-card featured reveal">
+            <span class="featured-badge"><i data-lucide="star"></i> Featured</span>
+            <div class="project-thumb" aria-hidden="true">
+              <i data-lucide="users-round"></i>
+            </div>
+            <div class="project-body">
+              <h3>IKSS — Founding &amp; Leadership</h3>
+              <p class="project-desc">Founded and led the Islamic Knowledge Seekers of SUST (IKSS), establishing its constitution, governance framework, and organizing the inaugural Islamic Conference with 1,200+ attendees.</p>
+              <div class="tags">
+                <span class="tag">Leadership</span>
+                <span class="tag">Governance</span>
+                <span class="tag">Event Management</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-btn">View Project <i data-lucide="arrow-up-right"></i></a>
+                <a href="#" class="link-btn link-ghost"><i data-lucide="github"></i> GitHub</a>
+                <button class="project-action-btn project-fav-btn" type="button" aria-label="Bookmark project" aria-pressed="false"><i data-lucide="bookmark"></i></button>
+                <button class="project-action-btn project-share-btn" type="button" aria-label="Share project"><i data-lucide="share-2"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-thumb" aria-hidden="true">
+              <i data-lucide="landmark"></i>
+            </div>
+            <div class="project-body">
+              <h3>Public Administration Internship</h3>
+              <p class="project-desc">Practical exposure across the District Commissioner's Office, City Corporation and Zilla Parishad — observing administrative processes and citizen-service workflows at the district level.</p>
+              <div class="tags">
+                <span class="tag">Public Admin</span>
+                <span class="tag">Governance</span>
+                <span class="tag">Research</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-btn">View Project <i data-lucide="arrow-up-right"></i></a>
+                <a href="#" class="link-btn link-ghost"><i data-lucide="github"></i> GitHub</a>
+                <button class="project-action-btn project-fav-btn" type="button" aria-label="Bookmark project" aria-pressed="false"><i data-lucide="bookmark"></i></button>
+                <button class="project-action-btn project-share-btn" type="button" aria-label="Share project"><i data-lucide="share-2"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-thumb" aria-hidden="true">
+              <i data-lucide="megaphone"></i>
+            </div>
+            <div class="project-body">
+              <h3>Social Media Marketing Campaigns</h3>
+              <p class="project-desc">Supported digital marketing campaigns at VERASOFTLAB — content creation, scheduling, and audience-engagement strategy to grow brand presence across platforms.</p>
+              <div class="tags">
+                <span class="tag">Marketing</span>
+                <span class="tag">Content</span>
+                <span class="tag">Social Media</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-btn">View Project <i data-lucide="arrow-up-right"></i></a>
+                <a href="#" class="link-btn link-ghost"><i data-lucide="github"></i> GitHub</a>
+                <button class="project-action-btn project-fav-btn" type="button" aria-label="Bookmark project" aria-pressed="false"><i data-lucide="bookmark"></i></button>
+                <button class="project-action-btn project-share-btn" type="button" aria-label="Share project"><i data-lucide="share-2"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-thumb" aria-hidden="true">
+              <i data-lucide="terminal"></i>
+            </div>
+            <div class="project-body">
+              <h3>Personal Coding &amp; Automation</h3>
+              <p class="project-desc">Hands-on programming and automation projects using Python and web technologies — scripts for productivity, data handling, and small web experiments.</p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Web</span>
+                <span class="tag">Automation</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-btn">View Project <i data-lucide="arrow-up-right"></i></a>
+                <a href="#" class="link-btn link-ghost"><i data-lucide="github"></i> GitHub</a>
+                <button class="project-action-btn project-fav-btn" type="button" aria-label="Bookmark project" aria-pressed="false"><i data-lucide="bookmark"></i></button>
+                <button class="project-action-btn project-share-btn" type="button" aria-label="Share project"><i data-lucide="share-2"></i></button>
+              </div>
+            </div>
+          </article>
+          <!-- End of project cards. Add more above this comment. -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROFESSIONAL DEVELOPMENT & CERTIFICATIONS ===================== -->
+    <section id="certifications" class="section section-alt" aria-labelledby="cert-title" data-num="06">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Growth &amp; Recognition</p>
+          <h2 id="cert-title">Professional Development &amp; Certifications</h2>
+          <span class="rule" aria-hidden="true"></span>
+          <p class="section-hint">Click any item to view details and the certificate.</p>
+        </header>
+
+        <!-- Professional Development -->
+        <h3 class="sub-title reveal">Professional Development</h3>
+        <div class="cert-grid">
+          <!--
+            HOW TO MAKE A CERTIFICATE OPEN IN THE MODAL:
+            Each clickable item uses data-* attributes that the modal reads.
+            To add a real certificate, drop the image/PDF in /certificates/
+            and set data-cert-file to that path (e.g. certificates/my-cert.pdf).
+          -->
+          <button class="cert-card reveal" type="button"
+            data-cert-title="Business &amp; Social English"
+            data-cert-org="Future Nation, on British Council"
+            data-cert-year="2026"
+            data-cert-desc="A professional development course focused on business and social English communication, offered through Future Nation in collaboration with the British Council."
+            data-cert-file="certificates/placeholder.svg">
+            <div class="cert-top">
+              <span class="cert-year">2026</span>
+              <i data-lucide="book-open" class="cert-icon"></i>
+            </div>
+            <h4>Business &amp; Social English</h4>
+            <p class="cert-org">Future Nation, British Council</p>
+            <span class="cert-view">View certificate <i data-lucide="arrow-right"></i></span>
+          </button>
+
+          <button class="cert-card reveal" type="button"
+            data-cert-title="Basic Business Communication"
+            data-cert-org="TSSL Songjog"
+            data-cert-year="2021"
+            data-cert-desc="Foundational training in business communication skills, offered by TSSL Songjog to strengthen professional written and spoken interaction."
+            data-cert-file="certificates/placeholder.svg">
+            <div class="cert-top">
+              <span class="cert-year">2021</span>
+              <i data-lucide="message-square" class="cert-icon"></i>
+            </div>
+            <h4>Basic Business Communication</h4>
+            <p class="cert-org">TSSL Songjog</p>
+            <span class="cert-view">View certificate <i data-lucide="arrow-right"></i></span>
+          </button>
+        </div>
+
+        <!-- Certifications -->
+        <h3 class="sub-title reveal">Certifications</h3>
+        <div class="cert-grid">
+          <button class="cert-card reveal" type="button"
+            data-cert-title="Introduction to Programming with Python"
+            data-cert-org="Institute of Information and Communication Technology (IICT), SUST"
+            data-cert-year="2024"
+            data-cert-desc="An introductory certification in Python programming, awarded by IICT at Shahjalal University of Science &amp; Technology, covering programming fundamentals and practical problem-solving."
+            data-cert-file="certificates/placeholder.svg">
+            <div class="cert-top">
+              <span class="cert-year">2024</span>
+              <i data-lucide="code" class="cert-icon"></i>
+            </div>
+            <h4>Introduction to Programming with Python</h4>
+            <p class="cert-org">IICT, SUST</p>
+            <span class="cert-view">View certificate <i data-lucide="arrow-right"></i></span>
+          </button>
+
+          <button class="cert-card reveal" type="button"
+            data-cert-title="HTML, CSS, and JavaScript for Web Developers"
+            data-cert-org="Johns Hopkins University, on Coursera"
+            data-cert-year="2021"
+            data-cert-desc="A Coursera specialization by Johns Hopkins University covering the foundations of front-end web development with HTML, CSS, and JavaScript."
+            data-cert-file="certificates/placeholder.svg">
+            <div class="cert-top">
+              <span class="cert-year">2021</span>
+              <i data-lucide="globe" class="cert-icon"></i>
+            </div>
+            <h4>HTML, CSS &amp; JavaScript for Web Developers</h4>
+            <p class="cert-org">Johns Hopkins University · Coursera</p>
+            <span class="cert-view">View certificate <i data-lucide="arrow-right"></i></span>
+          </button>
+
+          <button class="cert-card reveal" type="button"
+            data-cert-title="Automate the Boring Stuff with Python Programming"
+            data-cert-org="Al Sweigart, on Udemy"
+            data-cert-year="2021"
+            data-cert-desc="A practical Udemy course by Al Sweigart teaching how to automate everyday tasks with Python — covering scripting, automation, and productivity."
+            data-cert-file="certificates/placeholder.svg">
+            <div class="cert-top">
+              <span class="cert-year">2021</span>
+              <i data-lucide="bot" class="cert-icon"></i>
+            </div>
+            <h4>Automate the Boring Stuff with Python</h4>
+            <p class="cert-org">Al Sweigart · Udemy</p>
+            <span class="cert-view">View certificate <i data-lucide="arrow-right"></i></span>
+          </button>
+
+          <button class="cert-card reveal" type="button"
+            data-cert-title="Youth Promise Leadership Summit 2020"
+            data-cert-org="SAVE Youth Bangladesh"
+            data-cert-year="2020"
+            data-cert-desc="Recognition of participation in the Youth Promise Leadership Summit 2020, awarded by SAVE Youth Bangladesh for engagement in youth leadership and development."
+            data-cert-file="certificates/placeholder.svg">
+            <div class="cert-top">
+              <span class="cert-year">2020</span>
+              <i data-lucide="trophy" class="cert-icon"></i>
+            </div>
+            <h4>Youth Promise Leadership Summit 2020</h4>
+            <p class="cert-org">SAVE Youth Bangladesh</p>
+            <span class="cert-view">View certificate <i data-lucide="arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== REFERENCES ===================== -->
+    <section id="references" class="section" aria-labelledby="ref-title" data-num="07">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Endorsements</p>
+          <h2 id="ref-title">References</h2>
+          <span class="rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="ref-grid">
+          <article class="ref-card reveal">
+            <div class="ref-avatar" aria-hidden="true">MM</div>
+            <h3>Dr. Md Masud Sarker, PhD</h3>
+            <p class="ref-role">Professor</p>
+            <p class="ref-dept">Department of Political Studies</p>
+            <p class="ref-inst">Shahjalal University of Science &amp; Technology, Sylhet-3114, Bangladesh</p>
+            <a href="mailto:masud-psa@sust.edu" class="ref-mail"><i data-lucide="mail"></i> masud-psa@sust.edu</a>
+          </article>
+
+          <article class="ref-card reveal">
+            <div class="ref-avatar" aria-hidden="true">MA</div>
+            <h3>Dr. Mohammad Abdullah Al Mumin, PhD</h3>
+            <p class="ref-role">Professor</p>
+            <p class="ref-dept">Department of Computer Science &amp; Engineering</p>
+            <p class="ref-inst">Shahjalal University of Science &amp; Technology, Sylhet-3114, Bangladesh</p>
+            <a href="mailto:mumin-cse@sust.edu" class="ref-mail"><i data-lucide="mail"></i> mumin-cse@sust.edu</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section section-alt" aria-labelledby="contact-title" data-num="08">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Get in Touch</p>
+          <h2 id="contact-title">Contact</h2>
+          <span class="rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="contact-wrap">
+          <div class="contact-cta reveal">
+            <h3>Let's connect.</h3>
+            <p>Open to opportunities, collaborations, and conversations around public administration, research, and community-building. Feel free to reach out — I'd be glad to talk.</p>
+            <a href="mailto:mdriyad83@student.sust.edu" class="btn btn-primary">Send an Email</a>
+          </div>
+
+          <ul class="contact-list reveal" role="list">
+            <li>
+              <span class="contact-ico"><i data-lucide="mail"></i></span>
+              <div>
+                <span class="contact-label">Email</span>
+                <a href="mailto:mdriyad83@student.sust.edu">mdriyad83@student.sust.edu</a>
+              </div>
+              <button class="copy-btn" data-copy="mdriyad83@student.sust.edu" aria-label="Copy email address">
+                <i data-lucide="copy"></i>
+              </button>
+            </li>
+            <li>
+              <span class="contact-ico"><i data-lucide="phone"></i></span>
+              <div>
+                <span class="contact-label">Phone</span>
+                <a href="tel:+8801602677417">+880 1602 677417</a>
+              </div>
+              <button class="copy-btn" data-copy="+8801602677417" aria-label="Copy phone number">
+                <i data-lucide="copy"></i>
+              </button>
+            </li>
+            <li>
+              <span class="contact-ico"><i data-lucide="map-pin"></i></span>
+              <div>
+                <span class="contact-label">Location</span>
+                <span>Nandail, Mymensingh</span>
+              </div>
+              <button class="copy-btn" data-copy="Nandail, Mymensingh" aria-label="Copy location">
+                <i data-lucide="copy"></i>
+              </button>
+            </li>
+            <li>
+              <span class="contact-ico"><i data-lucide="file-text"></i></span>
+              <div>
+                <span class="contact-label">Resume</span>
+                <a href="cv.html">View CV (PDF)</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brandcol">
+          <div class="footer-brand">
+            <img src="assets/logo.png" alt="" width="38" height="38" />
+            <span>MD. RIYAD HASAN</span>
+          </div>
+          <p class="footer-tagline">Political Studies Graduate &amp; Public Administration Enthusiast. Committed to learning, teamwork and integrity.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer">
+          <span class="footer-col-title">Explore</span>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="cv.html">View CV</a>
+        </nav>
+        <div class="footer-contact">
+          <span class="footer-col-title">Contact</span>
+          <a href="mailto:mdriyad83@student.sust.edu">mdriyad83@student.sust.edu</a>
+          <a href="tel:+8801602677417">+880 1602 677417</a>
+          <span>Nandail, Mymensingh</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© <span id="year"></span> MD. RIYAD HASAN. All rights reserved.</p>
+        <div class="footer-links-row">
+          <button class="footer-changelog" id="footerChangelog" type="button">
+            <i data-lucide="history"></i> What's new
+          </button>
+          <button class="footer-feedback" id="footerFeedback" type="button">
+            <i data-lucide="message-circle"></i> Feedback
+          </button>
+        </div>
+        <p class="footer-updated"><i data-lucide="clock"></i> Last updated <time id="lastUpdated" datetime="2026-09-03">September 2026</time></p>
+        <p class="footer-built">Built with HTML, CSS &amp; vanilla JS — deployable on Cloudflare Pages.</p>
+        <button class="footer-top-btn" id="footerTopBtn" aria-label="Back to top">
+          <i data-lucide="arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== CERTIFICATE MODAL ===================== -->
+  <div class="modal" id="certModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" data-close aria-label="Close certificate dialog">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-content">
+        <div class="modal-head">
+          <div class="modal-seal" aria-hidden="true"><i data-lucide="award"></i></div>
+          <div>
+            <p class="modal-eyebrow">Certificate</p>
+            <h3 id="modalTitle">—</h3>
+          </div>
+        </div>
+        <div class="modal-meta">
+          <div class="meta-item">
+            <span class="meta-label">Issuing Organization</span>
+            <strong id="modalOrg">—</strong>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Year</span>
+            <strong id="modalYear">—</strong>
+          </div>
+        </div>
+        <p class="modal-desc" id="modalDesc">—</p>
+
+        <!--
+          CERTIFICATE VIEWER AREA
+          ========================
+          This area shows the certificate image or PDF.
+          If data-cert-file is an image (png/jpg/svg/webp) it shows in an <img>.
+          If it's a PDF, it shows in an <iframe>.
+          To add a real certificate, drop the file in /certificates/ and
+          set data-cert-file on the cert-card button (see the cert section above).
+        -->
+        <div class="modal-viewer" id="modalViewer">
+          <!-- populated by main.js -->
+        </div>
+        <p class="modal-note">
+          <i data-lucide="info"></i>
+          This is a placeholder. Replace the file in the <code>certificates/</code> folder to show the real certificate.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top with scroll-progress ring -->
+  <button id="toTop" class="to-top" aria-label="Back to top">
+    <svg class="to-top-ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle class="ring-bg" cx="24" cy="24" r="22" />
+      <circle class="ring-fill" cx="24" cy="24" r="22" />
+    </svg>
+    <i data-lucide="arrow-up" class="to-top-icon"></i>
+  </button>
+
+  <!-- Keyboard shortcut hints button + overlay -->
+  <button class="kbd-hint-btn" id="kbdHintBtn" aria-label="Show keyboard shortcuts" title="Keyboard shortcuts (?)">
+    <i data-lucide="keyboard"></i>
+  </button>
+
+  <div class="kbd-overlay" id="kbdOverlay" role="dialog" aria-modal="true" aria-labelledby="kbdTitle" aria-hidden="true">
+    <div class="kbd-backdrop" data-kbd-close></div>
+    <div class="kbd-dialog" role="document">
+      <button class="kbd-close" data-kbd-close aria-label="Close shortcuts">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="kbd-content">
+        <p class="kbd-eyebrow">Power user</p>
+        <h3 id="kbdTitle" class="kbd-title">Keyboard Shortcuts</h3>
+        <p class="kbd-sub">Navigate faster with these shortcuts. Press <kbd>?</kbd> or <kbd>Esc</kbd> to close.</p>
+        <ul class="kbd-list">
+          <li><span class="kbd-keys"><kbd>T</kbd></span><span class="kbd-desc">Scroll to top</span></li>
+          <li><span class="kbd-keys"><kbd>F</kbd></span><span class="kbd-desc">Jump to Projects &amp; focus filter</span></li>
+          <li><span class="kbd-keys"><kbd>C</kbd></span><span class="kbd-desc">Jump to Contact</span></li>
+          <li><span class="kbd-keys"><kbd>?</kbd></span><span class="kbd-desc">Toggle this panel</span></li>
+          <li><span class="kbd-keys"><kbd>Esc</kbd></span><span class="kbd-desc">Close any dialog</span></li>
+        </ul>
+        <p class="kbd-tip"><i data-lucide="info"></i> Shortcuts are ignored while typing in inputs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== COMMAND PALETTE (Cmd/Ctrl+K) ===================== -->
+  <div class="cmd-palette" id="commandPalette" role="dialog" aria-modal="true" aria-labelledby="cmdTitle" aria-hidden="true">
+    <div class="cmd-backdrop" data-cmd-close></div>
+    <div class="cmd-dialog" role="document">
+      <div class="cmd-input-wrap">
+        <i data-lucide="search" class="cmd-search-icon"></i>
+        <input type="text" id="cmdInput" class="cmd-input" placeholder="Search sections and actions…" aria-label="Search commands" autocomplete="off" spellcheck="false" />
+        <kbd class="cmd-esc-hint">Esc</kbd>
+      </div>
+      <p id="cmdTitle" class="sr-only">Command palette — search sections and quick actions</p>
+      <ul class="cmd-list" id="cmdList" role="listbox" aria-label="Commands"></ul>
+      <div class="cmd-footer">
+        <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+        <span><kbd>↵</kbd> select</span>
+        <span class="cmd-hint-brand">MD. RIYAD HASAN</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Developer easter egg -->
+  <div class="easter-egg" id="easterEgg" aria-hidden="true">
+    <div class="ee-card">
+      <button class="ee-close" data-ee-close aria-label="Close"><i data-lucide="x"></i></button>
+      <div class="ee-icon"><i data-lucide="code-2"></i></div>
+      <h3>Hello, developer.</h3>
+      <p>You opened the inspector. This site is hand-built with semantic HTML, CSS and vanilla JS — no frameworks, no build step. Deploy it free on Cloudflare Pages.</p>
+      <div class="ee-stats">
+        <span><strong id="eeLoc">—</strong><small>lines of code</small></span>
+        <span><strong id="eeKb">—</strong><small>total size</small></span>
+        <span><strong>0</strong><small>dependencies</small></span>
+      </div>
+      <button class="btn btn-primary btn-sm" data-ee-close>Thanks, close</button>
+    </div>
+  </div>
+
+  <!-- ===================== FAVORITES FAB + PANEL ===================== -->
+  <button class="fav-fab" id="favFab" aria-label="View bookmarked projects">
+    <i data-lucide="bookmark-check"></i>
+    <span>Saved</span>
+    <span class="fav-fab-count" id="favFabCount">0</span>
+  </button>
+
+  <div class="fav-panel" id="favPanel" role="dialog" aria-modal="true" aria-labelledby="favTitle" aria-hidden="true">
+    <div class="fav-backdrop" data-fav-close></div>
+    <div class="fav-dialog" role="document">
+      <div class="fav-header">
+        <span class="fav-icon"><i data-lucide="bookmark-check"></i></span>
+        <div class="fav-header-text">
+          <h3 id="favTitle" class="fav-title">Saved Projects</h3>
+          <p class="fav-sub">Your bookmarked projects, saved on this device</p>
+        </div>
+        <button class="fav-close" data-fav-close aria-label="Close saved projects">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="fav-list" id="favList">
+        <!-- populated by main.js -->
+      </div>
+      <div class="fav-footer">
+        <span class="fav-count" id="favCount">0 saved</span>
+        <button class="fav-clear" id="favClear" type="button">Clear all</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FIRST-VISIT ONBOARDING TOUR ===================== -->
+  <div class="tour-overlay" id="tourOverlay" role="dialog" aria-modal="true" aria-labelledby="tourTitle" aria-hidden="true">
+    <div class="tour-backdrop" data-tour-close></div>
+    <div class="tour-card" role="document">
+      <div class="tour-icon"><i data-lucide="sparkles"></i></div>
+      <p class="tour-eyebrow">Welcome</p>
+      <h3 id="tourTitle" class="tour-title">Explore the portfolio</h3>
+      <p class="tour-text">A few handy features to help you get the most out of this site. Take a quick tour or dive right in.</p>
+      <div class="tour-features">
+        <div class="tour-feature">
+          <span class="tour-feature-icon"><i data-lucide="command"></i></span>
+          <div class="tour-feature-text">
+            <span class="tour-feature-title">Command palette</span>
+            <span class="tour-feature-desc">Press Ctrl/⌘ + K to jump to any section or action</span>
+          </div>
+        </div>
+        <div class="tour-feature">
+          <span class="tour-feature-icon"><i data-lucide="keyboard"></i></span>
+          <div class="tour-feature-text">
+            <span class="tour-feature-title">Keyboard shortcuts</span>
+            <span class="tour-feature-desc">Press ? to see all shortcuts (T, F, C, P)</span>
+          </div>
+        </div>
+        <div class="tour-feature">
+          <span class="tour-feature-icon"><i data-lucide="bookmark-check"></i></span>
+          <div class="tour-feature-text">
+            <span class="tour-feature-title">Bookmark projects</span>
+            <span class="tour-feature-desc">Save projects and view them anytime from the Saved panel</span>
+          </div>
+        </div>
+        <div class="tour-feature">
+          <span class="tour-feature-icon"><i data-lucide="palette"></i></span>
+          <div class="tour-feature-text">
+            <span class="tour-feature-title">Background tint</span>
+            <span class="tour-feature-desc">Switch between cream and warm parchment</span>
+          </div>
+        </div>
+      </div>
+      <div class="tour-actions">
+        <button class="btn btn-primary btn-sm" id="tourStart">Start exploring</button>
+        <button class="tour-skip" data-tour-close type="button">Maybe later</button>
+      </div>
+      <div class="tour-dots" aria-hidden="true">
+        <span class="tour-dot active"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== CHANGELOG MODAL ===================== -->
+  <div class="changelog-overlay" id="changelogOverlay" role="dialog" aria-modal="true" aria-labelledby="changelogTitle" aria-hidden="true">
+    <div class="changelog-backdrop" data-changelog-close></div>
+    <div class="changelog-dialog" role="document">
+      <div class="changelog-header">
+        <span class="changelog-icon"><i data-lucide="history"></i></span>
+        <div class="changelog-header-text">
+          <h3 id="changelogTitle" class="changelog-title">What's New</h3>
+          <p class="changelog-version">Recent updates to the portfolio</p>
+        </div>
+        <button class="changelog-close" data-changelog-close aria-label="Close changelog">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="changelog-list" id="changelogList">
+        <!-- populated by main.js -->
+      </div>
+      <div class="changelog-footer">Static site · no tracking · deployable on Cloudflare Pages</div>
+    </div>
+  </div>
+
+  <!-- Sound pulse indicator -->
+  <div class="sound-pulse" id="soundPulse" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

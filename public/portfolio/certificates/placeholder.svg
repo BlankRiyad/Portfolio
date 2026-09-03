@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDF8F3"/>
+      <stop offset="1" stop-color="#F5EDE3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect x="30" y="30" width="740" height="540" fill="none" stroke="#C4A484" stroke-width="3" rx="10"/>
+  <rect x="45" y="45" width="710" height="510" fill="none" stroke="#EDE4D8" stroke-width="1.5" rx="6"/>
+  <!-- Seal -->
+  <circle cx="400" cy="300" r="80" fill="none" stroke="#C4A484" stroke-width="3"/>
+  <circle cx="400" cy="300" r="62" fill="none" stroke="#A88B6A" stroke-width="1.5"/>
+  <path d="M360 300 L390 328 L440 278" fill="none" stroke="#C4A484" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="420" font-family="Georgia, serif" font-size="26" fill="#3D3229" text-anchor="middle" font-weight="600">Certificate of Achievement</text>
+  <text x="400" y="455" font-family="Georgia, serif" font-size="15" fill="#6B5E54" text-anchor="middle">Replace this placeholder with the actual certificate</text>
+  <text x="400" y="478" font-family="Georgia, serif" font-size="15" fill="#6B5E54" text-anchor="middle">image or PDF in /certificates/ folder</text>
+</svg>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block the certificates placeholder from indexing (optional)
+Disallow: /certificates/placeholder.svg
+
+Sitemap: /sitemap.xml

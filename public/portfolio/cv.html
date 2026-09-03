@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View MD. RIYAD HASAN's CV / Resume as a PDF inside the website." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#FDF8F3" />
+  <title>View CV — MD. RIYAD HASAN</title>
+
+  <!-- BreadcrumbList structured data -->
+  <script type="application/ld+json" data-breadcrumb>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "index.html" },
+      { "@type": "ListItem", "position": 2, "name": "CV", "item": "cv.html" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Prevent theme flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("rh-tint");
+        if (t === "parchment") document.documentElement.setAttribute("data-tint", "parchment");
+      } catch (e) {}
+    })();
+  </script>
+
+  <style>
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* Reading progress bar (reuses site style) */
+    .progress-bar { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 150; background: transparent; pointer-events: none; }
+    .progress-bar span { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent-hover)); box-shadow: 0 0 8px rgba(196,164,132,.5); transition: width .12s linear; }
+
+    /* Toast (reuses site style) */
+    .toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translate(-50%, 80px);
+      background: var(--text); color: #fff; padding: 12px 20px; border-radius: var(--r-full);
+      font-size: .86rem; font-weight: 600; box-shadow: var(--shadow-lg);
+      z-index: 300; opacity: 0; pointer-events: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: opacity .3s var(--ease), transform .4s var(--ease); max-width: 90vw;
+    }
+    .toast i { width: 16px; height: 16px; color: var(--accent); }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    /* CV-page specific layout */
+    .cv-topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(253, 248, 243, .92);
+      backdrop-filter: saturate(160%) blur(12px);
+      -webkit-backdrop-filter: saturate(160%) blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    [data-tint="parchment"] .cv-topbar { background: rgba(247, 239, 226, .92); }
+    .cv-topbar-inner {
+      max-width: var(--container); margin-inline: auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .cv-brand { display: flex; align-items: center; gap: 12px; }
+    .cv-brand img { width: 38px; height: 38px; border-radius: 10px; background: var(--surface); padding: 4px; box-shadow: var(--shadow-sm); }
+    .cv-brand strong { font-weight: 800; color: var(--text); font-size: 1rem; }
+    .cv-brand small { display: block; font-size: .76rem; color: var(--text-muted); font-weight: 500; }
+    .cv-actions { display: flex; gap: 10px; align-items: center; }
+
+    .cv-stage {
+      max-width: 1040px; margin: 36px auto 60px; padding: 0 24px; flex: 1;
+    }
+    .cv-stage-head { text-align: center; margin-bottom: 22px; }
+    .cv-stage-head h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.6rem, 4vw, 2.4rem); color: var(--text); }
+    .cv-stage-head p { color: var(--text-muted); margin-top: 6px; }
+
+    /* CV metadata strip */
+    .cv-meta {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .cv-meta-chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 7px 14px; border-radius: var(--r-full); font-size: .82rem; font-weight: 600;
+      color: var(--text-muted);
+    }
+    .cv-meta-chip i { width: 14px; height: 14px; color: var(--accent); }
+    .cv-meta-chip strong { color: var(--text); font-weight: 700; }
+
+    .cv-frame {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg);
+      box-shadow: var(--shadow-lg); overflow: hidden; position: relative;
+    }
+    /* PDF loading shimmer */
+    .cv-frame::before {
+      content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(90deg, transparent, rgba(196,164,132,.08), transparent);
+      transform: translateX(-100%); animation: cvShimmer 1.6s ease-in-out infinite;
+    }
+    .cv-frame.loaded::before { display: none; }
+    @keyframes cvShimmer { to { transform: translateX(100%); } }
+    @media (prefers-reduced-motion: reduce) { .cv-frame::before { animation: none; display: none; } }
+
+    .cv-frame embed, .cv-frame iframe, .cv-frame object {
+      width: 100%; height: 86vh; min-height: 620px; border: 0; display: block;
+      background: #525659; position: relative; z-index: 2;
+    }
+
+    .cv-fallback { padding: 48px 24px; text-align: center; }
+    .cv-fallback .ico { width: 56px; height: 56px; color: var(--accent); margin: 0 auto 14px; }
+    .cv-fallback h2 { font-family: var(--font-display); font-weight: 600; margin-bottom: 8px; color: var(--text); }
+    .cv-fallback p { color: var(--text-muted); margin-bottom: 22px; }
+
+    .cv-foot { text-align: center; color: var(--text-muted); font-size: .86rem; margin-top: 22px; }
+
+    /* Share button */
+    .cv-share-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      width: 40px; height: 40px; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--border); color: var(--accent);
+      justify-content: center; transition: all .3s var(--ease); overflow: hidden;
+      padding: 0 10px;
+    }
+    .cv-share-btn i { width: 18px; height: 18px; flex-shrink: 0; }
+    .cv-share-btn span { font-size: .82rem; font-weight: 600; white-space: nowrap; max-width: 0; opacity: 0; transition: max-width .3s var(--ease), opacity .3s var(--ease); }
+    .cv-share-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .cv-share-btn:hover span { max-width: 80px; opacity: 1; }
+
+    /* Tint toggle (desktop) */
+    .tint-toggle {
+      display: none; width: 40px; height: 40px; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--border); color: var(--accent);
+      align-items: center; justify-content: center; transition: all .3s var(--ease);
+    }
+    .tint-toggle i { width: 18px; height: 18px; }
+    .tint-toggle:hover { background: var(--accent); color: #fff; transform: rotate(12deg); border-color: var(--accent); }
+    @media (min-width: 641px) { .tint-toggle { display: flex; } }
+
+    @media (max-width: 640px) {
+      .cv-brand small { display: none; }
+      .cv-stage { padding: 0 14px; }
+      .cv-frame embed, .cv-frame iframe, .cv-frame object { height: 70vh; min-height: 520px; }
+      .cv-actions .btn span { display: none; }
+      .cv-actions .btn { padding: 9px 14px; }
+      .cv-share-btn span { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="skip-link">Back to portfolio</a>
+
+  <!-- Reading progress bar -->
+  <div class="progress-bar" id="progressBar" aria-hidden="true"><span id="progressFill"></span></div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <header class="cv-topbar">
+    <div class="cv-topbar-inner">
+      <a href="index.html" class="cv-brand" aria-label="Back to portfolio">
+        <img src="assets/logo.png" alt="" width="38" height="38" />
+        <span>
+          <strong>MD. RIYAD HASAN</strong>
+          <small>Curriculum Vitae</small>
+        </span>
+      </a>
+      <div class="cv-actions">
+        <button class="cv-share-btn" id="cvShareBtn" aria-label="Share this page">
+          <i data-lucide="share-2"></i> <span>Share</span>
+        </button>
+        <button class="cv-print-btn" id="cvPrintBtn" aria-label="Print CV" title="Print CV">
+          <i data-lucide="printer"></i>
+        </button>
+        <button class="tint-toggle" id="tintToggle" aria-label="Switch background tint" title="Switch background tint">
+          <i data-lucide="palette"></i>
+        </button>
+        <a href="Riyad_CV.pdf" download class="btn btn-ghost btn-sm">
+          <i data-lucide="download"></i> <span>Download</span>
+        </a>
+        <a href="index.html" class="btn btn-primary btn-sm">
+          <i data-lucide="arrow-left"></i> <span>Back to site</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cv-stage">
+    <header class="cv-stage-head">
+      <h1>Curriculum Vitae</h1>
+      <p>MD. RIYAD HASAN — Political Studies Graduate</p>
+    </header>
+
+    <!-- CV metadata -->
+    <div class="cv-meta" aria-label="Document details">
+      <span class="cv-meta-chip"><i data-lucide="file-text"></i> <strong>PDF</strong></span>
+      <span class="cv-meta-chip"><i data-lucide="hard-drive"></i> <span id="cvFileSize">— KB</span></span>
+      <span class="cv-meta-chip"><i data-lucide="clock"></i> <span data-reading-time>~2 min read</span></span>
+      <span class="cv-meta-chip"><i data-lucide="calendar"></i> <span>2026</span></span>
+    </div>
+
+    <!--
+      PDF VIEWER
+      ==========
+      The PDF is embedded with <object>/<embed> so it opens INSIDE the website
+      (no forced download). A download button is also provided above.
+      The browser's built-in PDF viewer provides zoom / print / save controls.
+    -->
+    <div class="cv-frame" id="cvFrame">
+      <object data="Riyad_CV.pdf" type="application/pdf" width="100%" height="100%" style="min-height:620px;" id="cvPdfObject">
+        <embed src="Riyad_CV.pdf" type="application/pdf" />
+        <!-- Fallback if the browser can't render PDFs inline -->
+        <div class="cv-fallback">
+          <div class="ico"><i data-lucide="file-text"></i></div>
+          <h2>Your browser can't display the PDF inline.</h2>
+          <p>You can download the CV using the button below.</p>
+          <a href="Riyad_CV.pdf" download class="btn btn-primary">
+            <i data-lucide="download"></i> Download Riyad_CV.pdf
+          </a>
+        </div>
+      </object>
+    </div>
+
+    <p class="cv-foot">
+      Having trouble viewing? <a href="Riyad_CV.pdf" download style="color:var(--accent);font-weight:600;">Download the PDF</a> instead.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-copy">© <span id="year"></span> MD. RIYAD HASAN. All rights reserved.</p>
+        <p class="footer-updated"><i data-lucide="clock"></i> Last updated <time id="lastUpdated" datetime="2026-09-03">September 2026</time></p>
+        <p class="footer-built">Built with HTML, CSS &amp; vanilla JS — deployable on Cloudflare Pages.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="cvToTop" class="cv-to-top" aria-label="Back to top">
+    <svg class="cv-to-top-ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle class="ring-bg" cx="24" cy="24" r="22" />
+      <circle class="ring-fill" cx="24" cy="24" r="22" />
+    </svg>
+    <i data-lucide="arrow-up" class="cv-to-top-icon"></i>
+  </button>
+
+  <script>
+    (function () {
+      "use strict";
+
+      function renderIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+          window.lucide.createIcons();
+        }
+      }
+      renderIcons();
+
+      // Footer year + last updated
+      document.getElementById("year").textContent = new Date().getFullYear();
+      var lastUpdated = document.getElementById("lastUpdated");
+      if (lastUpdated) {
+        try {
+          var dt = lastUpdated.getAttribute("datetime");
+          if (dt) {
+            var d = new Date(dt);
+            if (!isNaN(d.getTime())) {
+              var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+              lastUpdated.textContent = months[d.getMonth()] + " " + d.getFullYear();
+            }
+          }
+        } catch (e) {}
+      }
+
+      // Reading progress bar
+      var progressFill = document.getElementById("progressFill");
+      function updateProgress() {
+        if (!progressFill) return;
+        var h = document.documentElement;
+        var scrolled = h.scrollTop || document.body.scrollTop;
+        var max = h.scrollHeight - h.clientHeight;
+        var pct = max > 0 ? (scrolled / max) * 100 : 0;
+        progressFill.style.width = Math.min(pct, 100) + "%";
+      }
+      updateProgress();
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      window.addEventListener("resize", updateProgress, { passive: true });
+
+      // Toast
+      var toast = document.getElementById("toast");
+      var toastTimer = null;
+      function showToast(message) {
+        if (!toast) return;
+        toast.innerHTML = '<i data-lucide="check-circle-2"></i><span>' + message + "</span>";
+        renderIcons();
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2200);
+      }
+
+      // Theme tint toggle
+      var tintToggle = document.getElementById("tintToggle");
+      function currentTint() { return document.documentElement.getAttribute("data-tint") === "parchment" ? "parchment" : "cream"; }
+      function applyTint(tint) {
+        if (tint === "parchment") document.documentElement.setAttribute("data-tint", "parchment");
+        else document.documentElement.removeAttribute("data-tint");
+        try { localStorage.setItem("rh-tint", tint); } catch (e) {}
+        if (tintToggle) {
+          tintToggle.setAttribute("aria-pressed", tint === "parchment" ? "true" : "false");
+          var icon = tintToggle.querySelector("i");
+          if (icon) {
+            icon.setAttribute("data-lucide", tint === "parchment" ? "sun" : "palette");
+            renderIcons();
+          }
+        }
+        showToast(tint === "parchment" ? "Parchment tint enabled" : "Cream tint enabled");
+      }
+      if (tintToggle) {
+        tintToggle.setAttribute("aria-pressed", currentTint() === "parchment" ? "true" : "false");
+        tintToggle.addEventListener("click", function () {
+          applyTint(currentTint() === "parchment" ? "cream" : "parchment");
+        });
+      }
+
+      // Share button (Web Share API + clipboard fallback)
+      var shareBtn = document.getElementById("cvShareBtn");
+      if (shareBtn) {
+        shareBtn.addEventListener("click", function () {
+          var shareData = {
+            title: "MD. RIYAD HASAN — CV",
+            text: "View MD. RIYAD HASAN's Curriculum Vitae",
+            url: window.location.href
+          };
+          if (navigator.share) {
+            navigator.share(shareData).catch(function () {});
+          } else if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(shareData.url).then(function () {
+              showToast("Link copied to clipboard");
+            }).catch(function () {
+              showToast("Could not copy link");
+            });
+          } else {
+            // Final fallback
+            var ta = document.createElement("textarea");
+            ta.value = shareData.url;
+            ta.style.position = "fixed"; ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand("copy"); showToast("Link copied to clipboard"); }
+            catch (e) { showToast("Could not copy link"); }
+            document.body.removeChild(ta);
+          }
+        });
+      }
+
+      // Detect PDF load to stop shimmer + fetch file size
+      var cvFrame = document.getElementById("cvFrame");
+      var pdfObject = document.getElementById("cvPdfObject");
+      function markLoaded() { if (cvFrame) cvFrame.classList.add("loaded"); }
+
+      if (pdfObject) {
+        pdfObject.addEventListener("load", markLoaded);
+        // Fallback: assume loaded after 3.5s if no event fires
+        setTimeout(markLoaded, 3500);
+      }
+
+      // Fetch PDF file size (HEAD request)
+      var sizeEl = document.getElementById("cvFileSize");
+      if (sizeEl) {
+        fetch("Riyad_CV.pdf", { method: "HEAD" })
+          .then(function (res) {
+            var len = res.headers.get("Content-Length");
+            if (len) {
+              var kb = Math.round(parseInt(len, 10) / 1024);
+              sizeEl.textContent = kb + " KB";
+            } else {
+              sizeEl.textContent = "PDF";
+            }
+          })
+          .catch(function () { sizeEl.textContent = "PDF"; });
+      }
+
+      // Print CV button — opens the PDF URL with #toolbar=1 so the viewer's print is available,
+      // or triggers window.print as a fallback for the page.
+      var printBtn = document.getElementById("cvPrintBtn");
+      if (printBtn) {
+        printBtn.addEventListener("click", function () {
+          // Try to call print on the embedded PDF object's contentWindow, fall back to window.print
+          try {
+            var obj = document.getElementById("cvPdfObject");
+            if (obj && obj.contentWindow && obj.contentWindow.print) {
+              obj.contentWindow.print();
+              return;
+            }
+          } catch (e) {}
+          // Fallback: open the PDF in a new tab where the browser print dialog is reliable
+          window.open("Riyad_CV.pdf", "_blank");
+        });
+      }
+
+      // Back-to-top button with scroll-progress ring
+      var cvToTop = document.getElementById("cvToTop");
+      var cvRingFill = document.querySelector(".cv-to-top-ring .ring-fill");
+      var cvRingCirc = 138.23;
+      function updateCvRing() {
+        if (!cvRingFill) return;
+        var h = document.documentElement;
+        var scrolled = h.scrollTop || document.body.scrollTop;
+        var max = h.scrollHeight - h.clientHeight;
+        var pct = max > 0 ? scrolled / max : 0;
+        cvRingFill.style.strokeDashoffset = Math.max(0, cvRingCirc * (1 - pct));
+      }
+      function toggleCvToTop() {
+        if (!cvToTop) return;
+        if (window.scrollY > 400) cvToTop.classList.add("show");
+        else cvToTop.classList.remove("show");
+      }
+      updateCvRing();
+      toggleCvToTop();
+      window.addEventListener("scroll", function () {
+        updateCvRing();
+        toggleCvToTop();
+      }, { passive: true });
+      window.addEventListener("resize", updateCvRing, { passive: true });
+      if (cvToTop) {
+        cvToTop.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      window.addEventListener("load", renderIcons);
+    })();
+  </script>
+</body>
+</html>
